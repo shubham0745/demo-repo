@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fetch Example</title>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+  <h2>LinkedIn</h2>
+  <div id="posts"></div>
+
+  <script>
+    async function getRecentPost() {
+        const response = await axios.get("https://jsonplaceholder.typicode.com/posts");
+        // Get the first post's title
+        document.getElementById("posts").innerHTML = response.data[0].title;
+      }
+
+    getRecentPost();
+  </script>
+</body>
+</html>
